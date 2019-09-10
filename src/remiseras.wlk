@@ -2,22 +2,22 @@ import clientes.*
 
 object roxana{
 	method precioViaje(cliente, kms){
-		return cliente.precio() * kms
+		return cliente.valorPorKm() * kms
 	}
 }
 
 object gabriela{
 	method precioViaje(cliente, kms){
-		return cliente.precio() * kms * 1.2
+		return cliente.valorPorKm() * kms * 1.2
 	}
 }
 
 object mariela{
 	method precioViaje(cliente, kms){
-		if (cliente.precio() * kms<=50){
+		if (cliente.valorPorKm() * kms<=50){
 			return 50
 		}
-		return cliente.precio() * kms
+		return cliente.valorPorKm() * kms
 	}
 } 
 
@@ -31,9 +31,9 @@ object juana{
 }
 
 object lucia{
-	var property reemplazoR = roxana
+	var property reemplazaARemisera = roxana
 	
 	method precioViaje(cliente, kms){
-		return reemplazoR.precioViaje(cliente, kms)
+		return reemplazaARemisera.precioViaje(cliente, kms)
 	}
 }

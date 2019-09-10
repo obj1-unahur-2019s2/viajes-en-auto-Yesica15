@@ -23,9 +23,13 @@ object oficina {
 		segundaRemisera = auxiliar
 	}
 	method remiseraElegidaParaViaje(cliente, kms){
-		if ((primeraRemisera.precioViaje(cliente, kms) - segundaRemisera.precioViaje(cliente, kms))>= 30){
+		if (((primeraRemisera.precioViaje(cliente, kms) > segundaRemisera.precioViaje(cliente, kms)) and 
+			(primeraRemisera.precioViaje(cliente, kms) - segundaRemisera.precioViaje(cliente, kms))>= 30) or
+			((primeraRemisera.precioViaje(cliente, kms) < segundaRemisera.precioViaje(cliente, kms)) and
+			not((segundaRemisera.precioViaje(cliente, kms) - primeraRemisera.precioViaje(cliente, kms))>= 30))){
 			return segundaRemisera
 		}
 		return primeraRemisera
+		
 	}
 }

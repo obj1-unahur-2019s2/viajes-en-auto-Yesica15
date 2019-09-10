@@ -1,37 +1,28 @@
 object ludmila {
-	method precio(){
+	method valorPorKm(){
 		return 18
 	}
 }
 
 object anaMaria{
-	var estabilidad = true
+	var property estabilidad = true
 	
-	method precio(){
+	method valorPorKm(){
 		if (estabilidad){
 			return 30
 		}
 		return 25
-	}
-	
-	method estaEstable(){
-		estabilidad = true
-	}
-	
-	method noEstaEstable(){
-		estabilidad = false
-	}
-	
+	}	
 }
 
 object teresa{
-	var property precio = 22
+	var property valorPorKm = 22
 }
 
 object melina{
-	var property reemplazoC = ludmila
+	var property reemplazaACliente = ludmila
 	
-	method precio(){
-		return reemplazoC.precio() - 3
+	method valorPorKm(){
+		return reemplazaACliente.valorPorKm() - 3
 	}
 }
