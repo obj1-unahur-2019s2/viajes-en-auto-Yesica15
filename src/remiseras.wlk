@@ -14,10 +14,7 @@ object gabriela{
 
 object mariela{
 	method precioViaje(cliente, kms){
-		if (cliente.valorPorKm() * kms<=50){
-			return 50
-		}
-		return cliente.valorPorKm() * kms
+		return 50.max(cliente.valorPorKm() * kms)
 	}
 } 
 
